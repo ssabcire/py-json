@@ -8,9 +8,13 @@ from config.log_config import LOGGER
 app = Flask(__name__)
 
 
-@app.route('/app')
+@app.route('/')
 def hello():
     config.dictConfig(LOGGER)
     logger = getLogger('zeals')
     logger.info('test')
     return 'Hello, World!'
+
+
+if __name__ == '__main__':
+    app.run()
