@@ -11,7 +11,7 @@ app = Flask(__name__)
 def hello():
     config.dictConfig(LOGGER)
     logger = getLogger('zeals')
-    logger.info('test\n I want to eat sushi')
+    logger.info('test\n I want to eat sushi', {"id": 1234, "name": "tamaki"})
     try:
         raise ValueError('something wrong')
     except ValueError:

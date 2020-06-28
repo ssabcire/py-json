@@ -17,3 +17,4 @@ def test_log(capsys):
     out, err = capsys.readouterr()
     assert out == expected
     assert err == ''
+    print(out)
