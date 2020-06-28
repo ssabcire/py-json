@@ -4,7 +4,6 @@ from flask import Flask
 
 from config.log_config import LOGGER
 
-
 app = Flask(__name__)
 
 
@@ -12,7 +11,12 @@ app = Flask(__name__)
 def hello():
     config.dictConfig(LOGGER)
     logger = getLogger('zeals')
-    logger.info('test')
+    logger.info('test\n I want to eat sushi')
+    try:
+        raise ValueError('something wrong')
+    except ValueError:
+        logger.exception(f'Request failed.', exc_info=True)
+
     return 'Hello, World!'
 
 
